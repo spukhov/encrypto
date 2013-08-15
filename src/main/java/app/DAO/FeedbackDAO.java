@@ -1,11 +1,23 @@
 package app.DAO;
 
+import app.Entity.Feedback;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+
+import javax.persistence.*;
+import java.util.List;
+
 /**
- * Created with IntelliJ IDEA.
- * User: sergiipukhov
- * Date: 8/14/13
- * Time: 12:57 PM
- * To change this template use File | Settings | File Templates.
+ *
  */
+
+@Repository
 public class FeedbackDAO {
+    @PersistenceContext
+    private EntityManager em;
+
+    public List<Feedback> findAll(){
+        return em.createQuery("from Feedback ").getResultList();
+    }
+
 }

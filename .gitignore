@@ -1,0 +1,10 @@
+.classpath
+.project
+*.log
+*.log.*
+target/*
+.idea/*
+hmc_tests_data/*
+*.swp
+*.idea
+*.iml
