@@ -2,13 +2,32 @@
 <!DOCTYPE html
         PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
 <head>
     <title>Tralala</title>
 
 </head>
 <body>
 <p>Trrr</p>
-<p>#{feedbackBean.findAll()}  </p>
+
+<h:form>
+
+<h:panelGrid columns="2">
+    <h:outputText value="Your name:" />
+    <h:inputText value="#{feedbackBean.name}" />
+
+    <h:outputText value="Your email:" />
+    <h:inputText value="#{feedbackBean.email}" />
+
+    <h:outputText value="Message:" />
+    <h:inputTextarea  cols="19" rows="8" value="#{feedbackBean.message}"/>
+
+    <h:commandButton value="Submit" action="#{feedbackBean.saveFeedback()}" />
+</h:panelGrid>
+
+</h:form>
 </body>
 </html>

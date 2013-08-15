@@ -16,8 +16,12 @@ import java.util.List;
 public class FeedbackService {
     @Autowired
     FeedbackDAO feedbackDAO;
+
     public List<Feedback> findAll(){
         return feedbackDAO.findAll();
+    }
+    public void saveFeedback(Feedback feedback){
+        feedbackDAO.saveFeedback(feedback);
     }
 
 }

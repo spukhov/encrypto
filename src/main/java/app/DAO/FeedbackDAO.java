@@ -19,5 +19,8 @@ public class FeedbackDAO {
     public List<Feedback> findAll(){
         return em.createQuery("from Feedback ").getResultList();
     }
+    public void saveFeedback(Feedback feedback){
+         em.persist(feedback);
+    }
 
 }

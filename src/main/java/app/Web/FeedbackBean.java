@@ -16,11 +16,44 @@ import java.util.List;
 @ManagedBean
 @RequestScoped
 public class FeedbackBean {
-       @Autowired
+    @Autowired
     FeedbackService feedbackService;
+    private String name;
+    private String email;
+    private String message;
 
-    public String findAll(){
-        return feedbackService.findAll().get(0).toString();
+    public List<Feedback> findAll() {
+        return feedbackService.findAll();
     }
 
+    public void saveFeedback(){
+         Feedback feedback = new Feedback(this.name, this.email, this.message);
+        feedbackService.saveFeedback(feedback);
+    }
+
+    /// Getters-Setters
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 }
