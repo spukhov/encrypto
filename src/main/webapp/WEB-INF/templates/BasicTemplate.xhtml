@@ -15,15 +15,20 @@
 		<ui:insert name="header">
 			<ui:include src="header.xhtml" />
 		</ui:insert>
+
+		<div class="btn"></div>
 	</div>
 
 	<div class="topShadow" />
 	<div class="content">
+		<div class="btn">
+		<h:commandButton value="Upload"></h:commandButton>
+		</div>
 		<ui:insert name="content">
 			<ui:include src="content.xhtml" />
 		</ui:insert>
 	</div>
-	
+
 	<div class="footer">
 
 		<div class="about"></div>
