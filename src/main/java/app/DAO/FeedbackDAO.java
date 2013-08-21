@@ -17,9 +17,9 @@ public class FeedbackDAO {
     private EntityManager em;
 
     public List<Feedback> findAll(){
-        return em.createQuery("from Feedback ").getResultList();
+        return em.createQuery("from Feedback").getResultList();
     }
-    public void saveFeedback(Feedback feedback){
+    public void save(Feedback feedback){
          em.persist(feedback);
     }
 

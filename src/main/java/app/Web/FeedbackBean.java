@@ -26,7 +26,7 @@ public class FeedbackBean {
         return feedbackService.findAll();
     }
 
-    public void saveFeedback(){
+    public void save(){
          Feedback feedback = new Feedback(this.name, this.email, this.message);
         feedbackService.saveFeedback(feedback);
     }

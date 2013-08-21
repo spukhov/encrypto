@@ -16,6 +16,33 @@
 
 		</ui:define>
 		<ui:define name="content">
+            <h:form style="float:right;">
+
+                <h:panelGrid columns="2">
+                    <h:outputText value="Your name:" />
+                    <h:inputText value="#{feedbackBean.name}" />
+
+                    <h:outputText value="Your email:" />
+                    <h:inputText value="#{feedbackBean.email}" />
+
+                    <h:outputText value="Message:" />
+                    <h:inputTextarea  cols="19" rows="8" value="#{feedbackBean.message}"/>
+
+                    <h:commandButton value="Submit" action="#{feedbackBean.save()}" />
+                </h:panelGrid>
+
+            </h:form>
+
+            <h:form>
+
+                <h:panelGrid columns="2">
+                    <h:outputText value="Text:" />
+                    <h:inputTextarea  cols="40" rows="18" value="#{encryptionBean.text}"/>
+
+                    <h:commandButton value="Encrypt" action="#{encryptionBean.save()}" />
+                </h:panelGrid>
+
+            </h:form>
 			
 		</ui:define>
 		<ui:define name="footer">
