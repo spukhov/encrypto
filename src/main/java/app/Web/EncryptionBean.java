@@ -21,8 +21,10 @@ public class EncryptionBean {
     private String text;
 
     public void save(){
+        System.out.println("bean");
         Encryption encryption = new Encryption(text, new java.sql.Date(new java.util.Date().getTime()));
         encryptionService.save(encryption);
+
     }
 
     public String getText() {

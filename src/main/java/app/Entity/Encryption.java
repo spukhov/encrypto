@@ -18,9 +18,9 @@ public class Encryption {
     private int id;
 
     private String text;
-    private Date date;
+    private java.sql.Date date;
 
-    public Encryption(String text, Date date) {
+    public Encryption(String text, java.sql.Date date) {
         this.text =text;
         this.date= date;
     }

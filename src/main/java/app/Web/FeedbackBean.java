@@ -22,9 +22,9 @@ public class FeedbackBean {
     private String email;
     private String message;
 
-    public List<Feedback> findAll() {
+    /*public List<Feedback> findAll() {
         return feedbackService.findAll();
-    }
+    }*/
 
     public void save(){
          Feedback feedback = new Feedback(this.name, this.email, this.message);
