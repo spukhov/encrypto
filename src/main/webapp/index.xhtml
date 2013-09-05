@@ -5,9 +5,9 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:a4j="http://richfaces.org/a4j"
-	xmlns:rich="http://richfaces.org/rich">
-
+	>
+<!--xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich" -->
 
 <h:body>
 
@@ -28,6 +28,7 @@
                     <h:outputText value="Message:" />
                     <h:inputTextarea  cols="19" rows="8" value="#{feedbackBean.message}"/>
 
+                    <h:outputText value=""></h:outputText>
                     <h:commandButton value="Submit" action="#{feedbackBean.save()}" />
                 </h:panelGrid>
 
@@ -39,7 +40,8 @@
                     <h:outputText value="Text:" />
                     <h:inputTextarea  cols="40" rows="18" value="#{encryptionBean.text}"/>
 
-                    <h:commandButton value="Encrypt" action="#{encryptionBean.save()}" />
+                    <h:outputText value=""></h:outputText>
+                    <h:commandButton value="Encrypt" action="#{encryptionBean.save}" />
                 </h:panelGrid>
 
             </h:form>
