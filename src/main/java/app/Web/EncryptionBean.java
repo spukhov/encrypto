@@ -19,12 +19,28 @@ public class EncryptionBean {
     @Autowired
     EncryptionService encryptionService;
     private String text;
+    private String encryptedText;
+    private String key;
 
     public void save(){
-        System.out.println("bean");
         Encryption encryption = new Encryption(text, new java.sql.Date(new java.util.Date().getTime()));
         encryptionService.save(encryption);
+        StringBuilder arr = new StringBuilder();
+        for(char c : text.toCharArray()){
+            c+=5;
+            arr.append(c);
+        }
 
+        encryptedText = new String(arr);
+    }
+    public void decrypt(){
+        StringBuilder arr = new StringBuilder();
+        for(char c : encryptedText.toCharArray()){
+            c-=5;
+            arr.append(c);
+        }
+
+        encryptedText = new String(arr);
     }
 
     public String getText() {
@@ -33,5 +49,13 @@ public class EncryptionBean {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public String getEncryptedText() {
+        return encryptedText;
+    }
+
+    public void setEncryptedText(String encryptedText) {
+        this.encryptedText = encryptedText;
     }
 }

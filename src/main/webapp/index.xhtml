@@ -30,6 +30,7 @@
 
                     <h:outputText value=""></h:outputText>
                     <h:commandButton value="Submit" action="#{feedbackBean.save()}" />
+
                 </h:panelGrid>
 
             </h:form>
@@ -40,8 +41,11 @@
                     <h:outputText value="Text:" />
                     <h:inputTextarea  cols="40" rows="18" value="#{encryptionBean.text}"/>
 
-                    <h:outputText value=""></h:outputText>
+                    <h:commandButton value="Decrypt" action="#{encryptionBean.decrypt}" />
                     <h:commandButton value="Encrypt" action="#{encryptionBean.save}" />
+
+                    <h:outputText value="Encryption:" />
+                    <h:inputTextarea  cols="40" rows="18" value="#{encryptionBean.encryptedText}"/>
                 </h:panelGrid>
 
             </h:form>

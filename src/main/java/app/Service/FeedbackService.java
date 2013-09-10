@@ -11,7 +11,7 @@ import java.util.List;
 /**
  *
  */
-@Transactional
+
 @Service
 public class FeedbackService {
     @Autowired
@@ -20,6 +20,7 @@ public class FeedbackService {
 //    public List<Feedback> findAll(){
 //        return feedbackDAO.findAll();
 //    }
+    @Transactional
     public void saveFeedback(Feedback feedback){
         feedbackDAO.save(feedback);
     }
